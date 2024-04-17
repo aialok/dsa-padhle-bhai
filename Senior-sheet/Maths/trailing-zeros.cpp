@@ -29,6 +29,16 @@ typedef vector<pii> vpii;
 
 void solve()
 {
+    int n;
+    cin >> n;
+    int ans = 0;
+    for (int i = 5; n / i > 0;)
+    {
+        ans = ans + (n / i);
+        n = n / i;
+    }
+
+    cout << ans << endl;
 }
 
 signed main()

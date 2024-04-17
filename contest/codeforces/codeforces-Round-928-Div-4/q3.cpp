@@ -10,6 +10,7 @@
 #include <map>
 #include <set>
 using namespace std;
+constexpr int N = 2e5 + 7;
 
 #define fastio                        \
     ios_base::sync_with_stdio(false); \
@@ -26,17 +27,36 @@ typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef vector<pii> vpii;
 #define int long long
+int sum[N + 1];
+
+constexpr int digitSum(int n)
+{
+    int sum = 0;
+    while (n)
+    {
+        sum = sum + n % 10;
+        n = n / 10;
+    }
+    return sum;
+}
 
 void solve()
 {
+    int n;
+    cin >> n;
+
+    cout << sum[n] << endl;
 }
 
 signed main()
 {
     fastio;
 
+    for (int i = 1; i <= N; i++)
+        sum[i] = sum[i - 1] + digitSum(i);
+
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

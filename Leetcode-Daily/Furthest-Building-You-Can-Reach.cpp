@@ -25,13 +25,20 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef vector<pii> vpii;
-#define int long long
 
-void solve()
+int furthestBuilding(vector<int> &heights, int bricks, int ladders)
 {
 }
 
-signed main()
+void solve()
+{
+    vi heights = {4, 2, 7, 6, 9, 14, 12};
+    int bricks = 5;
+    int ladders = 1;
+    furthestBuilding(heights, bricks, ladders);
+}
+
+int main()
 {
     fastio;
 

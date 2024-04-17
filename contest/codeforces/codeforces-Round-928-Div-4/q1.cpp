@@ -29,6 +29,30 @@ typedef vector<pii> vpii;
 
 void solve()
 {
+    string s;
+    cin >> s;
+    int arr[2]{0};
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] == 'A')
+        {
+            arr[0] += 1;
+        }
+        else
+        {
+            arr[1] += 1;
+        }
+        /* code */
+    }
+
+    if(arr[0]>arr[1]){
+        cout<<'A'<<endl;
+    }
+    else{
+        cout<<'B'<<endl;
+    }
+
 }
 
 signed main()
@@ -36,7 +60,7 @@ signed main()
     fastio;
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

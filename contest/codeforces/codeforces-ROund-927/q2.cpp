@@ -25,18 +25,43 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef vector<pii> vpii;
-#define int long long
 
 void solve()
 {
+    int n;
+    cin >> n;
+
+    vi arr(n);
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    int nth_year = arr[0];
+    int temp = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] <= temp)
+        {
+            int i = 1;
+            while (arr[i] <= temp)
+            {
+                arr[i] = arr[i] * (++i);
+            }
+        }
+
+        temp = arr[i];
+    }
+
+    cout << temp << endl;
 }
 
-signed main()
+int main()
 {
     fastio;
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
