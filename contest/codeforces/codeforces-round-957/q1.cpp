@@ -25,38 +25,30 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef vector<pii> vpii;
-#define int long long
-
-// Function to calculate modular inverse
-int modInverse(int a, int m)
-{
-    int m0 = m;
-    int y = 0, x = 1;
-
-    if (m == 1)
-        return 0;
-
-    while (a > 1) {
-        int q = a / m;
-        int t = m;
-
-        m = a % m;
-        a = t;
-        t = y;
-
-        y = x - q * y;
-        x = t;
-    }
-
-    if (x < 0)
-        x += m0;
-
-    return x;
-}
-
+#define int unsigned long long
 
 void solve()
 {
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    int arr[3] = {a, b, c};
+
+    sort(arr, arr + 3);
+
+    long long max_product = 0;
+
+    for (int i = 0; i <= 5; i++)
+    {
+        for (int j = 0; j <= 5 - i; j++)
+        {
+            int k = 5 - i - j;
+            long long product = (long long)(arr[0] + i) * (arr[1] + j) * (arr[2] + k);
+            max_product = max(max_product, product);
+        }
+    }
+
+    cout << max_product << endl;
 }
 
 signed main()
@@ -64,7 +56,7 @@ signed main()
     fastio;
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

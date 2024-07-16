@@ -27,36 +27,19 @@ typedef vector<vi> vvi;
 typedef vector<pii> vpii;
 #define int long long
 
-// Function to calculate modular inverse
-int modInverse(int a, int m)
-{
-    int m0 = m;
-    int y = 0, x = 1;
-
-    if (m == 1)
-        return 0;
-
-    while (a > 1) {
-        int q = a / m;
-        int t = m;
-
-        m = a % m;
-        a = t;
-        t = y;
-
-        y = x - q * y;
-        x = t;
-    }
-
-    if (x < 0)
-        x += m0;
-
-    return x;
-}
-
-
 void solve()
 {
+    int x1, y1, x2, y2;
+    cin>>x1>>y1;
+    cin>>x2>>y2;
+
+    if(x1>=y1 && x2>=y2 || x1<=y1 && x2<=y2){
+        cout<<"YES"<<endl;
+    }else{
+        cout<<"NO"<<endl;
+    }
+        
+
 }
 
 signed main()
@@ -64,7 +47,7 @@ signed main()
     fastio;
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
